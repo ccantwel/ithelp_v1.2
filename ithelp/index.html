@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+
+<!-- Consulted the following URLS on Feb 23 2015 for assitance with creating this document: 
+http://htmldog.com/techniques/formtoemail/
+https://technology.cca.edu/help/submit (HTML source code)
+http://www.developphp.com/page.php?id=294  -->
+
+<html lang="en">
+<head>
+<title>IT Help Desk-Request Submission Form</title>
+<meta charset="UTF-8"> 
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="itHelpStyles.css" rel="stylesheet">
+</head>
+
+ <body>
+ 
+<h1><img src="_images/Publisher%20Guelph%20Gryphon%20Logo_265%20x%2065.jpg" alt="Guelph Gryphons Logo">  IT Help Desk-Request Submission Form</h1>
+<form action="thankyou.php" method="POST" name="myForm" class="form-horizontal">
+	<div class="form-group">
+		<label for="sender" class="col-sm-2 control-label">Name:</label>
+		<div class="col-xs-5">
+			<input name="sender" class="form-control" id="sender" placeholder="Some Body" required>
+		</div>
+	</div>
+	
+	<div class="form-group">
+        <label for="senderEmail" class="col-sm-2 control-label">Email address:</label>
+		<div class="col-xs-5">
+			<input name="senderEmail" class="form-control" id="senderEmail" placeholder="sbody@uoguelph.ca" required>
+		</div>
+    </div>
+
+	<div class="form-group">	
+		<label for="senderPhoneExt" class="col-sm-2 control-label">University Phone Extension:</label>
+		<div class="col-xs-5">
+			<input name="senderPhoneExt" class="form-control" id="senderPhoneExt" placeholder="12345">
+		</div>
+	</div>
+		
+	<div class="form-group">
+		<label for="senderPhone" class="col-sm-2 control-label">Phone Number (if no university phone extension):</label>
+		<div class="col-xs-5">
+			<input name="senderPhone" class="form-control" id="senderPhone" placeholder="12345678901">
+		</div>
+	</div>
+		
+	<div class="form-group">
+		<label for="senderLocation" class="col-sm-2 control-label">Location:</label>
+		<div class="col-xs-5">
+			<input name="senderLocation" class="form-control" id="senderLocation">
+		</div>
+	</div>	
+		
+	<div class="form-group">
+		<label for="Priority" class="col-sm-2 control-label">Priority:</label>
+		<div class="col-xs-5 selectContainer">
+		<select name="Priority" class="form-control" id="Priority" required>
+			<option value="-1" selected>[select option]</option>
+			<option value="1">1: No rush, can be done when time permits</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5: EMERGENCY, needs to be done right away</option>
+		</select>
+		</div>
+	</div>
+		
+<h3>Type Of Issue:</h3>		
+	 
+	<div class="form-group">
+		<label for="Category" class="col-sm-2 control-label">Category:</label>
+		 <div class="col-xs-5 selectContainer">
+		 <select name="Category" class="form-control" id="Category" required">
+			<option value="-1" selected>[select option]</option>
+			<option value="Google Apps">Google Apps</option>
+			<option value="Hardware">Hardware</option>
+			<option value="Phones/Networking">Phones/Networking</option>
+			<option value="Printing/Faxing">Printing/Faxing</option>
+			<option value="Set-up For New User">Set-up For New User</option>
+			<option value="Software">Software</option>
+			<option value="Virus/Security">Virus/Security</option>
+			<option value="Zimbra (email/calendar)">Zimbra (email/calendar)</option>
+			<option value="Other/Don't Know">Other/Don't Know</option>
+			<option value="Website">Website</option>
+			</select> 
+		</div>
+		</div>
+		
+	<div class="form-group" id="hardware">
+		<label for="Hardware_Support" class="col-sm-2 control-label">What type of hardware issue?</label>
+		 <div class="col-xs-5 selectContainer">
+		 <select name="Hardware_Support" class="form-control" id="Hardware_Support" required">
+			<option value="-1" selected>[select option]</option>
+			<option value="ComputerMac">Computer - Mac OS</option>
+			<option value="ComputerWindows">Computer - Windows 7</option>
+			<option value="MobileDevice">Mobile Devices (e.g. Cell Phones, iPods, Tablets)</option>
+			<option value="Monitor/TV">Monitors / Television Sets</option>
+			<option value="Multimedia">Multimedia devices (e.g. projectors)</option>
+			<option value="Requests">Requests for any hardware devices
+			<option value="Server">Servers</option>
+			<option value="Other">Other hardware issues</option>
+			</select> 
+		</div>
+	</div>
+	
+	<div class="form-group" id="newUser-setup">
+		<label class="col-sm-2 control-label">What does the user need? (check all that apply)</label>
+		<div class = "checkbox" id = "NewUser_Setup">
+		<label> <input type="checkbox" id="AccessToSharedDrive"> Access To Shared Drive &nbsp;&nbsp;</label>
+		<label> <input type="checkbox" id="AccountForActiveNet"> Account For ActiveNet &nbsp;&nbsp;</label>
+		<label> <input type="checkbox" id="AccountForGryphons.ca"> Account For Gryphons.ca &nbsp;&nbsp;</label>
+		<label> <input type="checkbox" id="AccountForEmail"> Account For Email/Central Log-in &nbsp;&nbsp;</label>
+		<label> <input type="checkbox" id="AccountForIssueTrackingSystem"> Account For Issue Tracking (JIRA/Confluence) System &nbsp;&nbsp;</label>
+		<label> <input type="checkbox" id="DepartmentCodeForPrinting"> Department Code For Printing</label><br />
+		<label> <input type="checkbox" id="HumanResourcesSystemSet-up"> Human Resources System Set-up &nbsp;&nbsp;</label>
+		<label> <input type="checkbox" id="NewComputer"> New Computer</label>
+		</div>
+		<div class="form-group">
+			<label for="otherSetup" class="col-sm-2 control-label">Is there someting user needs that is not listed above? (if yes please specify)</label>
+				<div class="col-xs-5">
+				<input name="otherSetup" class="form-control" id="otherSetup">
+			</div>
+		</div>	
+	</div>
+	
+	<div class="form-group" id="phones">
+		<label for="Phonework_Support" class="col-sm-2 control-label">What type of phone/networking issue?</label>
+		<div class="col-xs-5 selectContainer">
+		<select name="Phonework_Support" class="form-control" id="Phonework_Support" required>
+			<option value="-1" selected>[select option]</option>
+			<option value="PhoneIssues">Phone issues (e.g. voice mail, making and receiving calls)</option>
+			<option value="WirelessNetwork">Wireless Networking Issues (e.g. unable to access internet)</option>
+			<option value="WiredNetwork">Wired Networking Issues (e.g. unable to access internet)</option>
+			<option value="Other">Other Phone/Networking Issues</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-group" id="printing">
+		<label for="Printing_Support" class="col-sm-2 control-label">What type of printing issue?</label>
+		<div class="col-xs-5 selectContainer">
+		<select name="Printing_Support" class="form-control" id="Printing_Support" required>
+			<option value="-1" selected>[select option]</option>
+			<option value="Unable to print">Unable to print, regardless of what application is used</option>
+			<option value="Unable to print some">Unable to print from some applications but not others.  For example, can print from Notepad but not Adobe Reader</option>
+			<option value="Unable to print wanted">Unable to print to to the printer I want</option>
+			<option value="Unable to fax">Unable to send a fax</option>
+			<option value="Other">Other Printing/Faxing Issues</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-group" id="software">
+		<label for="Software_Support" class="col-sm-2 control-label">What type of software?</label>
+		<div class="col-xs-5 selectContainer">
+		<select name="Software_Support" class="form-control" id="Software_Support" required>
+			<option value="-1" selected>[select option]</option>
+			<option value="Operating System">Operating System Install/Reinstall/Upgrade</option>
+			<option value="Mac New">Mac OS - New Software/Licences</option>
+			<option value="Mac Renew">Mac OS - Renew Existing Software/Licences</option>
+			<option value="Windows New">Windows - New Software/Licences</option>
+			<option value="Windows Renew">Windows - Renew Existing Software/Licences</option>
+			<option value="Install/Upgrade Assistance">Assistance With Installing/Upgrading Software</option>
+			<option value="Other">Other Software Issues</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-group" id="virus">
+		<label for="Virus" class="col-sm-2 control-label">What type of virus/security issue?</label>
+		<div class="col-xs-5 selectContainer">
+		<select name="Virus" class="form-control" id="Virus" required>
+			<option value="-1" selected>[select option]</option>
+			<option value="Anti-Virus Software">Anti-Virus Software Related</option>
+			<option value="Virus">Virus RelatedMac OS - New Software/Licences</option>
+			<option value="Spyware/Malware">Spyware/Malware Related</option>
+			<option value="Security Incident">Security Incident</option>
+			<option value="Other">Other Virus/Security Issues</option>
+			</select>
+		</div>
+	</div> 
+	
+	<div class="form-group" id="website">
+		<label for="Website_Support" class="col-sm-2 control-label">Which website?</label>
+		<div class="col-xs-5 selectContainer">
+		<select name="Website_Support" class="form-control" id="Website_Support" required>
+			<option value="-1" selected>[select option]</option>
+			<option value="ActiveNet">ActiveNet</option>
+			<option value="Get Rec'd Web App">Get Rec'd Web App</option>
+			<option value="Gryphons.ca">Gryphons.ca</option>
+			<option value="Merchandise">Merchandise</option>
+			<option value="Tickets">Tickets</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-group">
+        <label for="message" class="col-sm-2 control-label">Please provide as much detail as possible in the box below so that we can better assist you with your request:</label>
+		<div class="col-xs-5">
+        <textarea rows="5" cols="20" class="form-control" name="message" id="message"></textarea>
+		</div>
+	</div>
+        
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-xs-5">
+			<button name="submit" type="submit" class="btn btn-default">Submit</button>
+			</div>
+	</div>
+		</form>
+		<!-- https://github.com/miohtama/jquery-interdependencies  2015-03-24 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="deps.js"></script>
+        <script>
+            $(document).ready(function() {
+                // Start creating a new ruleset
+                var ruleset = $.deps.createRuleset();
+
+                // Show Website option only when Website option is selected
+                var webRule = ruleset.createRule("#Category", "==", "Website");
+                webRule.include("#website");
+				
+				//Show Software option only when Software option is selected
+				var softwareRule = ruleset.createRule("#Category", "==", "Software");
+                softwareRule.include("#software");
+				
+				//Show Virus/Security option only when Virus/Security option is selected
+				var virusRule = ruleset.createRule("#Category", "==", "Virus/Security");
+                virusRule.include("#virus");
+				
+				//Show Printing/Faxing option only when Printing/Faxing option is selected
+				var printRule = ruleset.createRule("#Category", "==", "Printing/Faxing");
+                printRule.include("#printing");
+				
+				//Show Printing/Faxing option only when Printing/Faxing option is selected
+				var hardwareRule = ruleset.createRule("#Category", "==", "Hardware");
+                hardwareRule.include("#hardware");
+				
+				//Show New User Setup option only when Set-up For New User option is selected
+				var newuserRule = ruleset.createRule("#Category", "==", "Set-up For New User");
+				newuserRule.include("#newUser-setup");
+				
+				//Show Phones/Networking option only when Phones/Networking option is selected
+				var phoneRule = ruleset.createRule("#Category", "==", "Phones/Networking");
+				phoneRule.include("#phones");
+				
+                // Make the ruleset effective on the whole page
+                ruleset.install({log: true});
+            });
+        </script>
+		<!-- <p>NOTES:  All required fields are in bold.  For University Phone Extension and Phone Number fields, you are only required to provide input for one.</p> -->
+</body>
+</html>
